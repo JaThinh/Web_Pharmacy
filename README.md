@@ -435,7 +435,7 @@ Products (1:N) Comments
 
 ## **Tác giả**
 
-👤 **Hoài Nam**
+👤 **Gia Thịnh**
 - GitHub: https://github.com/JaThinh
 - Email: phamlegiathinh20042gmail.com
 
