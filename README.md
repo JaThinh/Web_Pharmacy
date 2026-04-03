@@ -173,8 +173,8 @@ Pharmacy Management System là nền tảng thương mại điện tử chuyên 
 
 ### **1. Clone project**
 ```bash
-git clone https://github.com/hoainamcode22/Back_End_Pharmacy.git
-cd Back_End_Pharmacy
+git clone https://github.com/JaThinh/Web_Pharmacy.git
+cd Web_Pharmacy
 ```
 
 ### **2. Setup Database**
@@ -436,8 +436,8 @@ Products (1:N) Comments
 ## **Tác giả**
 
 👤 **Hoài Nam**
-- GitHub: [@hoainamcode22](https://github.com/hoainamcode22)
-- Email: hoainamcode22@gmail.com
+- GitHub: https://github.com/JaThinh
+- Email: phamlegiathinh20042gmail.com
 
 ---
 
