@@ -1,0 +1,84 @@
+/* Container chính - Style giống hệt AboutPage */
+.static-page-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px 28px;
+  background: #fff;
+  font-family: "Inter", Arial, sans-serif;
+  color: #333;
+  line-height: 1.75;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Animation nhẹ giúp chuyên nghiệp hơn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tiêu đề chính (h1) - Áp dụng style của .about-title */
+.static-page-container h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0072ce;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #eaeaea;
+}
+
+/* Mục h2 */
+.static-page-container h2 {
+  font-size: 1.65rem;
+  margin-top: 40px;
+  margin-bottom: 14px;
+  color: #0054a6;
+  font-weight: 600;
+}
+
+/* Mục h3 */
+.static-page-container h3 {
+  font-size: 1.3rem;
+  margin-top: 28px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Đoạn văn */
+.static-page-container p {
+  font-size: 1.08rem;
+  margin-bottom: 15px;
+}
+
+/* Danh sách */
+.static-page-container ul,
+.static-page-container ol {
+  padding-left: 22px;
+  margin-bottom: 16px;
+}
+
+.static-page-container li {
+  margin-bottom: 10px;
+  font-size: 1.08rem;
+}
+
+/* In đậm */
+.static-page-container strong {
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .static-page-container {
+    padding: 28px 20px;
+  }
+
+  .static-page-container h1 {
+    font-size: 2rem;
+  }
+
+  .static-page-container h2 {
+    font-size: 1.5rem;
+  }
+}

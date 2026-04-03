@@ -1,0 +1,90 @@
+.checkout-success-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  min-height: 70vh;
+  background-color: #f8f9fa;
+}
+
+.success-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 48px;
+  max-width: 550px;
+  width: 100%;
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+  font-size: 48px;
+  color: white;
+}
+
+.success-icon.success {
+  background-color: #28a745;
+  box-shadow: 0 0 0 10px rgba(40, 167, 69, 0.15);
+}
+
+.success-icon.fail {
+  background-color: #dc3545;
+  box-shadow: 0 0 0 10px rgba(220, 53, 69, 0.15);
+}
+
+.success-card h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0 0 16px 0;
+}
+
+.success-card p {
+  font-size: 16px;
+  color: #636e72;
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.btn-secondary {
+  background: #e9ecef;
+  color: #2d3436;
+}
+
+.btn-secondary:hover {
+  background: #dfe6e9;
+}

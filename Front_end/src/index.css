@@ -1,0 +1,367 @@
+/* =========================
+   0) VARIABLES & RESET
+========================= */
+:root{
+  --primary: #00a859;
+  --primary-dark:#008a48;
+  --secondary: #0066C0;
+  --bg:#f8fafb;
+  --card:#ffffff;
+  --text:#2d3436;
+  --muted: #636e72;
+
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-soft: 0 1px 4px rgba(0,0,0,0.06);
+  --border: 1px solid #e8eaed;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{min-height:100%;width:100%;overflow-x:hidden}
+
+body{
+  font-family: Inter, Roboto, "Segoe UI", Arial, sans-serif;
+  background: #f8fafb;
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:0;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* =========================
+   2) FORM & BUTTON
+========================= */
+.form{ display:flex; flex-direction:column; gap:12px; margin-top:12px; }
+
+.input{
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #d8d8d8;
+  font-size:14px;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.input:focus{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0,123,255,.12);
+}
+
+.btn{
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  background:var(--primary);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+  box-shadow: var(--shadow-soft);
+}
+.btn:hover{ transform:translateY(-1px); background:var(--primary-dark); }
+.btn:active{ transform:translateY(0); }
+.btn.secondary{ background:#6c757d; }
+.btn.secondary:hover{ background:#59626a; }
+
+.link{ color:var(--primary); text-decoration:none; }
+.link:hover{ text-decoration:underline; }
+
+.link-like{
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  font: inherit;
+}
+
+/* =========================
+   3) AUTH LAYOUT (LOGIN PAGE)
+========================= */
+.auth-shell{
+  width:100%;
+  max-width:1400px;
+  display:grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap:32px;
+  margin-top:12px;
+}
+
+.auth-left{ min-height:640px; }
+.notice-header{ display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+.notice-title{ font-weight:800; letter-spacing:.3px; color:#136f63; }
+
+.notice-list{
+  margin-top:8px;
+  display:flex; flex-direction:column; gap:10px;
+  max-height:70vh; overflow:auto;
+}
+.notice-item{
+  background:#fbfdff;
+  border:var(--border);
+  border-radius:10px;
+  padding:12px 14px;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.notice-item:hover{
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-1px);
+}
+.notice-item-title{ font-weight:700; color:#0f2d4a; line-height:1.35 }
+.notice-item-meta{
+  margin-top:6px; display:flex; justify-content:space-between; align-items:center;
+  color:#6c757d; font-size:.95rem;
+}
+.notice-link{ color: var(--primary); text-decoration: none; }
+.notice-link:hover{ text-decoration: underline; }
+
+.auth-right{ display:flex; flex-direction:column; gap:0; }
+.auth-right .card{ padding:24px; }
+.auth-brand{ color:#136f63; font-weight:800; margin-bottom:8px; letter-spacing:1px; }
+
+@media (max-width: 1024px){
+  .auth-shell{
+    grid-template-columns: 1fr;
+    max-width: 860px;
+  }
+  .auth-left{ min-height:auto; }
+}
+
+/* === Background riêng cho trang Login === */
+.login-page{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+.login-page::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--login-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  opacity: 0.5;
+  background-color: rgba(0,0,0,.25);
+  background-blend-mode: darken;
+  z-index: -1;
+}
+
+/* =========================
+   🚫 ẨN TOÀN BỘ PHẦN KHÔNG PHẢI LOGIN
+========================= */
+/**
+.container,
+.left, .right,
+.features,
+.admin-layout,
+.sidebar,
+.main-content,
+.site-header,
+.site-footer,
+.hero,
+.p-card,
+.grid-products,
+.row-section,
+.contact,
+.shelf-section {
+  display: none !important;
+}
+**/
+/* =========================
+   4) HEADER & FOOTER (User Layout)
+========================= */
+.site-header {
+  background: linear-gradient(135deg, #00a859 0%, #00c16e 100%);
+  box-shadow: 0 2px 8px rgba(0, 168, 89, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.site-header .brand {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-header .brand::before {
+  content: "💊";
+  font-size: 1.6rem;
+}
+
+.site-header .nav {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  margin-left: 24px;
+  align-items: center;
+}
+
+.site-header .nav a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 24px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 0.2px;
+  min-width: 110px;
+}
+
+.site-header .nav a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.site-header .nav a.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* === ĐÂY LÀ CODE FOOTER ĐÃ SỬA (NỀN TRẮNG) === */
+.site-footer {
+  /* THAY ĐỔI: Nền trắng, chữ xám đậm */
+  background-color: #ffffff; 
+  color: #374151; /* Màu chữ mặc định */
+  padding: 40px 0 20px; /* Giữ padding của bạn */
+  margin-top: 80px; /* Giữ margin-top của bạn */
+  border-top: 1px solid #e5e7eb; /* Thêm viền xám nhạt */
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Code này sẽ áp dụng cho các link bên trong footer */
+.site-footer .footer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.site-footer .footer-link {
+  color: #374151;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.site-footer .footer-link:hover {
+  color: #00a859; /* Màu xanh lá chủ đạo của web */
+  text-decoration: underline;
+}
+/* === KẾT THÚC CODE FOOTER === */
+
+
+.site-header .btn.ghost {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.site-header .btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.site-header .badge {
+  position: relative;
+}
+
+.site-header .badge .count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4757;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 2px solid #00a859;
+}
+
+/* Đã xóa code .site-footer bị trùng lặp ở đây */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-section {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  box-shadow: none;
+  border: 1px solid #e8eaed;
+}
+
+.btn.ghost:hover {
+  background: rgba(0, 168, 89, 0.08);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.small {
+  font-size: 0.9rem;
+  color: var(--muted, #6c757d);
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}

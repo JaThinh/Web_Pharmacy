@@ -1,0 +1,96 @@
+/* Container chính */
+.about-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px 28px;
+  background: #fff;
+  font-family: "Inter", Arial, sans-serif;
+  color: #333;
+  line-height: 1.75;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Animation nhẹ giúp chuyên nghiệp hơn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tiêu đề chính */
+.about-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0072ce;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #eaeaea;
+}
+
+/* Mục h2 */
+.about-container h2 {
+  font-size: 1.65rem;
+  margin-top: 40px;
+  margin-bottom: 14px;
+  color: #0054a6;
+  font-weight: 600;
+}
+
+/* Mục h3 */
+.about-container h3 {
+  font-size: 1.3rem;
+  margin-top: 28px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Đoạn văn */
+.about-container p {
+  font-size: 1.08rem;
+  margin-bottom: 15px;
+}
+
+/* Đoạn intro đặc biệt */
+.about-intro {
+  font-size: 1.18rem;
+  font-style: italic;
+  color: #555;
+  background: #f3f8ff;
+  border-left: 4px solid #0072ce;
+  padding: 16px 18px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
+
+/* Danh sách */
+.about-container ul,
+.about-container ol {
+  padding-left: 22px;
+  margin-bottom: 16px;
+}
+
+.about-container li {
+  margin-bottom: 10px;
+  font-size: 1.08rem;
+}
+
+/* In đậm */
+.about-container strong {
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .about-container {
+    padding: 28px 20px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.5rem;
+  }
+}

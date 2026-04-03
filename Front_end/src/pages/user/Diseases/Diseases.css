@@ -1,0 +1,418 @@
+/* ===== CONTAINER ===== */
+.diseases-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  min-height: 100vh;
+  background: #f8fafb;
+}
+
+/* ===== HEADER ===== */
+.diseases-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.diseases-header h1 {
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #00a859 0%, #00d478 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 16px 0;
+  letter-spacing: -1px;
+}
+
+.diseases-subtitle {
+  font-size: 20px;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ===== SEARCH FORM ===== */
+.diseases-search-form {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+  background: white;
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 168, 89, 0.15);
+  border: 2px solid rgba(0,168,89,0.1);
+  transition: all 0.3s ease;
+}
+
+.diseases-search-form:focus-within {
+  box-shadow: 0 12px 40px rgba(0, 168, 89, 0.25);
+  border-color: #00a859;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.search-input-wrapper svg {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #1f2937;
+  background: transparent;
+  padding: 12px 0;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #9ca3af;
+}
+
+.search-input-wrapper input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.diseases-search-form button {
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #00a859, #00d478);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,168,89,0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diseases-search-form button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #008a48, #00b963);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,168,89,0.35);
+}
+
+.diseases-search-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== RESULTS ===== */
+.diseases-results {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.results-header {
+  margin-bottom: 32px;
+}
+
+.results-header h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1e3a3a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.results-header h2::before {
+  content: "";
+  width: 6px;
+  height: 32px;
+  background: linear-gradient(135deg, #00a859, #00d478);
+  border-radius: 10px;
+}
+
+/* ===== GRID ===== */
+.diseases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+/* ===== DISEASE CARD (ĐÃ SỬA) ===== */
+.disease-card {
+  background: white;
+  border-radius: 20px;
+  /* XÓA PADDING Ở ĐÂY */
+  /* padding: 28px; */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border: 2px solid rgba(0,168,89,0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  /* BỎ GAP VÀ THÊM OVERFLOW */
+  /* gap: 16px; */
+  overflow: hidden; 
+}
+
+.disease-card:hover {
+  box-shadow: 0 12px 32px rgba(0,168,89,0.2);
+  border-color: #00a859;
+  transform: translateY(-4px);
+}
+
+/* ✨ THÊM KHUNG ẢNH MỚI ✨ */
+.disease-card-image {
+  width: 100%;
+  height: 180px; /* Chiều cao cố định cho ảnh thumbnail */
+  overflow: hidden;
+  background-color: #f0f4f3;
+}
+
+.disease-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Giúp ảnh không bị méo */
+  transition: transform 0.3s ease;
+}
+
+.disease-card:hover .disease-card-image img {
+  transform: scale(1.05); /* Hiệu ứng zoom khi hover */
+}
+
+/* ✨ THÊM DIV BỌC TEXT MỚI ✨ */
+.disease-card-content {
+  padding: 24px; /* Dán padding vào đây */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1; /* Giúp đẩy footer xuống dưới */
+}
+
+.disease-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.disease-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e3a3a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.disease-card-category {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #e8f5f3, #d1fae5);
+  color: #00a859;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+}
+
+.disease-card-overview {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b7280;
+  margin: 0;
+  flex: 1; /* QUAN TRỌNG: Đẩy footer xuống dưới cùng */
+}
+
+.disease-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  border-top: 2px solid #f0f4f3;
+}
+
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00a859;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.disease-card:hover .read-more {
+  gap: 12px;
+  color: #008a48;
+}
+
+.read-more svg {
+  transition: transform 0.3s ease;
+}
+
+.disease-card:hover .read-more svg {
+  transform: translateX(4px);
+}
+
+/* ===== LOADING STATE ===== */
+.diseases-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #e8f5f3;
+  border-top-color: #00a859;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.diseases-loading p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* ===== EMPTY STATE ===== */
+.diseases-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: 40px;
+}
+
+.diseases-empty svg {
+  opacity: 0.2;
+  margin-bottom: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.diseases-empty h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #4b5563;
+  margin: 0 0 12px 0;
+}
+
+.diseases-empty p {
+  font-size: 17px;
+  color: #9ca3af;
+  margin: 0 0 24px 0;
+}
+
+.btn-reset {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #00a859, #00d478);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,168,89,0.25);
+}
+
+.btn-reset:hover {
+  background: linear-gradient(135deg, #008a48, #00b963);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,168,89,0.35);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .diseases-container {
+    padding: 24px 16px 60px;
+  }
+
+  .diseases-header h1 {
+    font-size: 32px;
+  }
+
+  .diseases-subtitle {
+    font-size: 16px;
+  }
+
+  .diseases-search-form {
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .search-input-wrapper input {
+    font-size: 16px;
+  }
+
+  .diseases-search-form button {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+
+  .diseases-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+
+  .disease-card-content {
+    padding: 20px; /* Di chuyển padding vào đây */
+  }
+
+  .disease-card-title {
+    font-size: 19px;
+  }
+
+  .disease-card-overview {
+    font-size: 15px;
+  }
+
+  .results-header h2 {
+    font-size: 22px;
+  }
+}

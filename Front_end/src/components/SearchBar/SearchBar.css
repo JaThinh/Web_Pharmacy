@@ -1,0 +1,63 @@
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px; /* Đặt icon cách lề 18px */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #636e72;
+  pointer-events: none;
+  font-size: 20px;
+}
+
+.search-input {
+  width: 100%;
+  /* ⭐️ SỬA DÒNG NÀY: Giảm padding-left xuống */
+  padding: 14px 48px 14px 18px; 
+  /* ⭐️ THÊM DÒNG NÀY: Dùng text-indent để lùi chữ vào 32px (tổng cộng 18+32 = 50px) */
+  text-indent: 32px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: white;
+  box-sizing: border-box; /* Thêm để đảm bảo padding hoạt động đúng */
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+}
+
+.search-input::placeholder {
+  color: #adb5bd;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #e9ecef;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #636e72;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #dee2e6;
+  color: #2d3436;
+}

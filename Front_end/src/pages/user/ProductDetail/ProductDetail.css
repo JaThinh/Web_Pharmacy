@@ -1,0 +1,945 @@
+/* ====== GLOBAL CONTAINER ====== */
+.product-detail-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
+  background: #fafafa;
+}
+
+/* ====== BREADCRUMB ====== */
+.breadcrumb {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.breadcrumb-link {
+  color: #00a859;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #008a48;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #9ca3af;
+}
+
+.breadcrumb-current {
+  color: #333;
+  font-weight: 600;
+}
+
+/* ====== MAIN CONTENT ====== */
+.product-detail-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 168, 89, 0.08);
+}
+
+/* ====== GALLERY ====== */
+.product-gallery {
+  flex: 1.2;
+  min-width: 450px;
+  max-width: 550px;
+}
+
+.main-image {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f3f4f6;
+  /* ⭐️ SỬA: Đổi thành hình vuông, dễ cân đối */
+  aspect-ratio: 1 / 1; 
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%; /* ⭐️ SỬA: Thay 500px thành 100% */
+  object-fit: contain;
+  padding: 30px;
+  transition: transform 0.3s ease;
+  box-sizing: border-box; /* ⭐️ THÊM: Để padding không làm vỡ layout */
+}
+
+.main-image:hover img {
+  transform: scale(1.03);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ff3b3b;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: #f8f8f8;
+  transition: all 0.2s ease;
+}
+
+.thumbnail.active,
+.thumbnail:hover {
+  border-color: #00a859;
+  box-shadow: 0 2px 6px rgba(0, 168, 89, 0.2);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ====== PRODUCT INFO ====== */
+.product-info-section {
+  flex: 1;
+  min-width: 400px;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.product-header .product-category {
+  color: #00a859;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.product-header .product-name {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 6px 0;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.product-meta .brand {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.product-meta .brand strong {
+  color: #0066ff;
+  font-weight: 600;
+}
+
+.separator {
+  color: #d1d5db;
+}
+
+.in-stock {
+  color: #00a859;
+}
+
+.low-stock {
+  color: #f59e0b;
+}
+
+.out-of-stock {
+  color: #dc2626;
+}
+
+/* ====== PRICE ====== */
+.price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 12px 0;
+  padding: 16px 0;
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.current-price {
+  font-size: 30px;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.original-price {
+  font-size: 16px;
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* ====== SHORT DESCRIPTION ====== */
+.short-description p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* ====== QUANTITY (⭐️ DESIGN LẠI) ====== */
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  flex-wrap: wrap;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  /* ⭐️ SỬA: Đổi border, bo góc */
+  border: 1px solid #00a859;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.qty-btn {
+  width: 38px; /* ⭐️ SỬA: Tăng kích thước 1 chút */
+  height: 38px;
+  border: none;
+  background: #fff; /* ⭐️ SỬA: Nền trắng */
+  font-size: 20px; /* ⭐️ SỬA: Tăng kích thước */
+  cursor: pointer;
+  color: #00a859;
+  transition: all 0.2s;
+  font-weight: 600; /* ⭐️ THÊM */
+}
+
+.qty-btn:hover {
+  background: #f0fdf4; /* ⭐️ SỬA: Màu xanh lá nhạt */
+}
+
+.qty-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f9fafb; /* ⭐️ SỬA */
+}
+
+.qty-input {
+  width: 48px;
+  height: 38px; /* ⭐️ THÊM */
+  text-align: center;
+  /* ⭐️ SỬA: Thêm viền 2 bên */
+  border: none;
+  border-left: 1px solid #e0f4ec;
+  border-right: 1px solid #e0f4ec;
+  background: #fff;
+  font-weight: 600;
+  font-size: 16px; /* ⭐️ SỬA */
+  color: #1f2937;
+  box-sizing: border-box; /* ⭐️ THÊM */
+}
+
+.stock-info {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* ====== ACTION BUTTONS (⭐️ DESIGN LẠI) ====== */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn-add-cart,
+.btn-buy-now {
+  flex: 1; /* ⭐️ ĐÂY LÀ DÒNG LÀM 2 NÚT BẰNG NHAU ⭐️ */
+  min-width: 180px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px solid #00a859; /* ⭐️ THÊM: Viền 2px */
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.btn-add-cart {
+  background: #00a859;
+  color: #fff;
+}
+
+.btn-add-cart:hover {
+  background: #009058;
+  border-color: #009058; /* ⭐️ THÊM */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 168, 89, 0.3);
+}
+
+.btn-add-cart svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ⭐️ SỬA NÚT MUA NGAY (Style viền) */
+.btn-buy-now {
+  background: #fff; /* ⭐️ SỬA: Nền trắng */
+  color: #00a859; /* ⭐️ SỬA: Chữ xanh */
+  font-weight: 600; /* ⭐️ SỬA: Giảm 1 chút */
+}
+
+.btn-buy-now:hover {
+  background: #f0fdf4; /* ⭐️ SỬA: Nền xanh nhạt */
+  border-color: #00a859; /* ⭐️ THÊM */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 168, 89, 0.2); /* ⭐️ SỬA: Shadow xanh */
+}
+
+.btn-add-cart:disabled,
+.btn-buy-now:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  background: #e5e7eb;
+  border-color: #e5e7eb;
+  color: #9ca3af;
+  box-shadow: none;
+}
+
+.btn-add-cart:disabled:hover,
+.btn-buy-now:disabled:hover {
+  transform: none;
+  box-shadow: none;
+  background: #e5e7eb;
+  border-color: #e5e7eb;
+}
+
+/* ====== ADDITIONAL INFO ====== */
+.additional-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.info-item svg {
+  stroke: #00a859;
+}
+
+/* ====== TABS ====== */
+.product-tabs {
+  margin-top: 60px;
+}
+
+.tab-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 3px solid transparent; /* ⭐️ THÊM: Để giữ layout */
+}
+
+.tab-btn:hover {
+  color: #00a859;
+}
+
+.tab-btn.active {
+  color: #00a859;
+  background: #f0fdf4;
+  border-bottom: 3px solid #00a859;
+  font-weight: 700; /* ⭐️ THÊM */
+}
+
+/* ====== TAB CONTENT ====== */
+.tab-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 168, 89, 0.08);
+  margin-top: 10px;
+}
+
+.description-content h3,
+.specs-content h3,
+.reviews-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+/* ⭐️ SỬA: CSS cho bảng thông tin */
+.product-specs {
+  border-top: 1px solid #f3f4f6;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.spec-row {
+  display: flex;
+  font-size: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f9fafb;
+}
+.spec-row:last-child {
+  border-bottom: none;
+}
+.spec-label {
+  flex-basis: 150px;
+  color: #6b7280;
+}
+.spec-value {
+  flex: 1;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+
+/* ====== REVIEWS ====== */
+.rating-summary {
+  display: flex; /* ⭐️ THÊM */
+  justify-content: center; /* ⭐️ THÊM */
+  align-items: center; /* ⭐️ THÊM */
+  background: #f9fafb; /* ⭐️ THÊM */
+  padding: 24px; /* ⭐️ THÊM */
+  border-radius: 12px; /* ⭐️ THÊM */
+  margin-bottom: 24px;
+}
+
+.average-rating {
+  text-align: center;
+}
+
+.rating-number {
+  font-size: 40px;
+  font-weight: 800;
+  color: #00a859;
+}
+
+.star-rating .star {
+  font-size: 20px;
+  color: #e5e7eb; /* ⭐️ SỬA: Màu sao rỗng */
+}
+
+.star-rating .star.filled {
+  color: #facc15; /* ⭐️ SỬA: Màu vàng đậm cho sao */
+}
+
+.rating-count {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ====== REVIEW FORM ====== */
+.btn-write-review {
+  background: #00a859;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 20px;
+}
+
+.btn-write-review:hover {
+  background: #009058;
+}
+
+.review-form-container {
+  margin-bottom: 30px;
+}
+
+.review-form .form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-form textarea {
+  width: 100%;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.review-form textarea:focus {
+  border-color: #00a859;
+  outline: none;
+}
+
+.star-selector .star {
+  font-size: 26px;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-selector .star.filled {
+  color: #facc15; /* ⭐️ SỬA: Màu vàng đậm */
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn-submit-review {
+  background: #00a859;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-submit-review:hover {
+  background: #009058;
+  transform: translateY(-2px);
+}
+
+.btn-cancel-review {
+  background: #f3f4f6;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-cancel-review:hover {
+  background: #e5e7eb;
+}
+
+/* ====== COMMENTS ====== */
+.comment-item {
+  border-bottom: 1px solid #f3f4f6;
+  padding: 16px 0;
+}
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.comment-user strong {
+  color: #111827;
+}
+
+.comment-date {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.comment-content {
+  font-size: 15px;
+  color: #374151;
+  margin-top: 8px;
+}
+
+.no-reviews {
+  text-align: center;
+  font-size: 15px;
+  color: #9ca3af;
+  padding: 30px 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+  .product-detail-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .product-gallery {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .product-info-section {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .product-header .product-name {
+    font-size: 24px;
+  }
+  .main-image img {
+    height: auto; /* ⭐️ SỬA: Để aspect-ratio xử lý */
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-detail-container {
+    padding: 20px 12px;
+  }
+  .tab-content {
+    padding: 16px;
+  }
+  .btn-add-cart,
+  .btn-buy-now {
+    font-size: 14px;
+    padding: 12px 16px;
+    min-width: 140px;
+  }
+  .main-image img {
+    height: auto;
+    padding: 15px;
+  }
+  .current-price {
+    font-size: 26px;
+  }
+  .product-header .product-name {
+    font-size: 20px;
+  }
+}
+
+/* ====== COMMENTS THREAD SYSTEM ====== */
+.comment-thread {
+  margin-bottom: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.comment-item {
+  padding: 16px;
+  background: #fff;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.comment-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-user strong {
+  color: #1f2937;
+}
+
+.star-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.star.filled {
+  color: #fbbf24;
+}
+
+.comment-date {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.comment-content {
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.comment-actions {
+  margin-top: 8px;
+}
+
+.reply-btn {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.reply-btn:hover {
+  background: #eff6ff;
+}
+
+/* Reply form */
+.reply-form-container {
+  padding: 16px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.reply-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.reply-form textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.btn-submit-reply,
+.btn-cancel-reply {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit-reply {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-submit-reply:hover {
+  background: #2563eb;
+}
+
+.btn-cancel-reply {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-cancel-reply:hover {
+  background: #e5e7eb;
+}
+
+/* Replies list */
+.replies-list {
+  background: #f9fafb;
+}
+
+.reply-item {
+  padding: 12px 16px;
+  border-left: 3px solid #e5e7eb;
+  margin-left: 20px;
+  background: #fff;
+  margin-bottom: 8px;
+  border-radius: 0 6px 6px 0;
+}
+
+.reply-item .comment-user {
+  margin-bottom: 4px;
+}
+
+.reply-indicator {
+  color: #6b7280;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.reply-item .comment-content {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Review form */
+.review-form-container {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.review-form h3 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+}
+
+.review-form .form-group {
+  margin-bottom: 16px;
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.star-selector {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.star-selector .star {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-selector .star:hover {
+  color: #fbbf24;
+}
+
+.review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.review-form textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn-submit-review {
+  background: #10b981;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit-review:hover {
+  background: #059669;
+}
+
+.btn-cancel-review {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-cancel-review:hover {
+  background: #e5e7eb;
+}
+
+.btn-write-review {
+  background: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-write-review:hover {
+  background: #2563eb;
+}
+
+.no-reviews {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 40px 20px;
+}
